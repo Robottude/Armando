@@ -107,7 +107,6 @@ TransformationMatrix RobotManipulator::inverseTransform(const TransformationMatr
   return InverseResult;
 }
 
-}
 
 
 // steps to move calculation
