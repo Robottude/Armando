@@ -52,10 +52,14 @@ void RobotManipulator::moveJoint() {
     // set direction, move joint, get position
 }
 
-bool RobotManipulator::moveToPosition() {
     // move joints to calculated ik solution
-}
-
+bool RobotManipulator::moveToPosition(const TransformationMatrix &desiredTransform) {
+    double jointValues[6];
+    if (inverseKinematics(config, desiredTransform, jointValues)) { // if ik is successfully calculated assign each joint
+        for (int i = 0; i < 6; ++i) {
+            moveJoint(i, jointValues[i]);
+        }
+    }
   // rest of the functions' implementations
 
 
