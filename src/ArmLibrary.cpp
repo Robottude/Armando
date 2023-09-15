@@ -7,12 +7,13 @@
 // ... StepperMotor -> SettingDirection,Steps
 
 // hwardware config
-StepperMotor::StepperMotor(int stepPin, int dirPin, int stepsPerRevolution, int stepDelay)// step pin and dir pin
-    : stepPin(stepPin), dirPin(dirPin), stepsPerRevolution(stepsPerRevolution), stepDelay(stepDelay) {
-    pinMode(stepPin, OUTPUT);
-    pinMode(dirPin, OUTPUT);
-    currentDirection = LOW;
-}
+
+//StepperMotor::StepperMotor(int stepPin, int dirPin, int stepsPerRevolution, int stepDelay)// step pin and dir pin
+//    : stepPin(stepPin), dirPin(dirPin), stepsPerRevolution(stepsPerRevolution), stepDelay(stepDelay) {
+//   pinMode(stepPin, OUTPUT);
+//    pinMode(dirPin, OUTPUT);
+//    currentDirection = LOW;
+//}
 
 void StepperMotor::setDirection(bool direction) {
     digitalWrite(dirPin, direction);
