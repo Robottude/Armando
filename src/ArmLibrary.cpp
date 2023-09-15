@@ -22,7 +22,9 @@ void StepperMotor::moveSteps( ) {
 }
 
 // >>>> add fixed variables (number of joints, steps per revolution, gear ratio
-
+const int numJoints = 6;
+const double motorStepsPerRevolution[numJoints] = {200, 200, 200, 200, 200, 200}; // Example values
+const double gearRatios[numJoints] = {1.0, 1.0, 1.0, 1.0, 1.0, 1.0}; // Example values
 // robot class implem
 
 // ... Robot -> DH Params, Move Joint, Move to Position 
