@@ -15,19 +15,19 @@
 //    currentDirection = LOW;
 //}
 
-void StepperMotor::setDirection(bool direction) {
-    digitalWrite(dirPin, direction);
-    currentDirection = direction;
-}
+//void StepperMotor::setDirection(bool direction) {
+//    digitalWrite(dirPin, direction);
+//    currentDirection = direction;
+//}
 
-void StepperMotor::moveSteps(int steps) {// take steps
-    for (int i = 0; i < abs(steps); ++i) {
-        digitalWrite(stepPin, HIGH);
-        delayMicroseconds(stepDelay);
-        digitalWrite(stepPin, LOW);
-        delayMicroseconds(stepDelay);
-    }
-}
+//void StepperMotor::moveSteps(int steps) {// take steps
+//    for (int i = 0; i < abs(steps); ++i) {
+//        digitalWrite(stepPin, HIGH);
+//        delayMicroseconds(stepDelay);
+//        digitalWrite(stepPin, LOW);
+//        delayMicroseconds(stepDelay);
+//    }
+//}
 
 // >>>> add fixed variables (number of joints, steps per revolution, gear ratio
 const int numJoints = 6;
