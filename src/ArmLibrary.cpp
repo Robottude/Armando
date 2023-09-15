@@ -67,12 +67,45 @@ bool RobotManipulator::inverseKinematics() {
    // ik calculation
 }
 
+// single joint transformation matrix calculation
+// use matrix multiplication function to calculate manipulator's transformation matrix
 
 TransformationMatrix RobotManipulator::createTransformMatrix() {
     // calculate transformation matrix
+    TransformationMatrix RobotManipulator::createTransformMatrix(double theta, double d, double a, double alpha) {
+    TransformationMatrix result;
+
+    double cosTheta = cos(theta);
+    double sinTheta = sin(theta);
+    double cosAlpha = cos(alpha);
+    double sinAlpha = sin(alpha);
+
+    result.matrix[0][0] = cosTheta;
+    result.matrix[0][1] = -sinTheta * cosAlpha;
+    result.matrix[0][2] = sinTheta * sinAlpha;
+    result.matrix[0][3] = a * cosTheta;
+
+    result.matrix[1][0] = sinTheta;
+    result.matrix[1][1] = cosTheta * cosAlpha;
+    result.matrix[1][2] = -cosTheta * sinAlpha;
+    result.matrix[1][3] = a * sinTheta;
+
+    result.matrix[2][0] = 0;
+    result.matrix[2][1] = sinAlpha;
+    result.matrix[2][2] = cosAlpha;
+    result.matrix[2][3] = d;
+
+    result.matrix[3][0] = 0;
+    result.matrix[3][1] = 0;
+    result.matrix[3][2] = 0;
+    result.matrix[3][3] = 1;
+
+    return result;
 }
 
-// matrix modification functions if necessary
+}
+
+// matrix modification functions
 
 TransformationMatrix RobotManipulator::matrixMultiply(const TransformationMatrix &m1, const TransformationMatrix &m2) {
     TransformationMatrix MultiplicationResult;
