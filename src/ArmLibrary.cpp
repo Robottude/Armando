@@ -7,9 +7,11 @@
 // ... StepperMotor -> SettingDirection,Steps
 
 // hwardware config
-StepperMotor::StepperMotor()
-    {
-    // step pin and dir pin
+StepperMotor::StepperMotor(int stepPin, int dirPin, int stepsPerRevolution, int stepDelay)// step pin and dir pin
+    : stepPin(stepPin), dirPin(dirPin), stepsPerRevolution(stepsPerRevolution), stepDelay(stepDelay) {
+    pinMode(stepPin, OUTPUT);
+    pinMode(dirPin, OUTPUT);
+    currentDirection = LOW;
 }
 
 void StepperMotor::setDirection(bool direction) {
@@ -17,8 +19,13 @@ void StepperMotor::setDirection(bool direction) {
     currentDirection = direction;
 }
 
-void StepperMotor::moveSteps( ) {
-    // take steps
+void StepperMotor::moveSteps(int steps) {// take steps
+    for (int i = 0; i < abs(steps); ++i) {
+        digitalWrite(stepPin, HIGH);
+        delayMicroseconds(stepDelay);
+        digitalWrite(stepPin, LOW);
+        delayMicroseconds(stepDelay);
+    }
 }
 
 // >>>> add fixed variables (number of joints, steps per revolution, gear ratio
