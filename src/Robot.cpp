@@ -1,38 +1,10 @@
 // UNIVERSAL ROBOT ARM LIBRARY // ユニバーサルロボットアームライブラリ
 
 #include "ArmLibrary.h"
+#include "Motor.h"
 
-// stepper class implem
-
-// ... StepperMotor -> SettingDirection,Steps
-
-// hwardware config
-
-//StepperMotor::StepperMotor(int stepPin, int dirPin, int stepsPerRevolution, int stepDelay)// step pin and dir pin
-//    : stepPin(stepPin), dirPin(dirPin), stepsPerRevolution(stepsPerRevolution), stepDelay(stepDelay) {
-//   pinMode(stepPin, OUTPUT);
-//    pinMode(dirPin, OUTPUT);
-//    currentDirection = LOW;
-//}
-
-//void StepperMotor::setDirection(bool direction) {
-//    digitalWrite(dirPin, direction);
-//    currentDirection = direction;
-//}
-
-//void StepperMotor::moveSteps(int steps) {// take steps
-//    for (int i = 0; i < abs(steps); ++i) {
-//        digitalWrite(stepPin, HIGH);
-//        delayMicroseconds(stepDelay);
-//        digitalWrite(stepPin, LOW);
-//        delayMicroseconds(stepDelay);
-//    }
-//}
-
-// >>>> add fixed variables (number of joints, steps per revolution, gear ratio
+// fixed configuration variable
 const int numJoints = 6;
-const double motorStepsPerRevolution[numJoints] = {200, 200, 200, 200, 200, 200}; // Example values
-const double gearRatios[numJoints] = {1.0, 1.0, 1.0, 1.0, 1.0, 1.0}; // Example values
 // robot class implem
 
 // ... Robot -> DH Params, Move Joint, Move to Position 
