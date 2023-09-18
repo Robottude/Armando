@@ -3,7 +3,8 @@
 #ifndef UNIVERSAL_ROBOT_MANIPULATOR_H
 #define UNIVERSAL_ROBOT_MANIPULATOR_H
 
-// Necessary Libraries 
+#include <Arduino.h>
+#include "Motor.h"
 
 // DH structure, Robot Structure, Trans Matrix
 struct DHParameters {
