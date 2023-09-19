@@ -9,18 +9,15 @@
 
 class Motor {
 public:
-    Motor(int stepsPerRev, int stepPin, int dirPin);
-
-    void begin();
-    void moveTo(int targetPosition);
+    Motor(int stepPin, int dirPin, int stepsPerRevolution, int stepDelay);
+    void setDirection(bool clockwise);
+    void moveSteps(int steps);
 
 private:
-    int stepsPerRev;
     int stepPin;
     int dirPin;
-    int currentPosition;
-    int targetPosition;
-    int speed;
+    int stepsPerRevolution;
+    int stepDelay;
 };
 
-#endif
+#endif  // MOTOR_H
