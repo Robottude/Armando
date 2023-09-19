@@ -10,8 +10,12 @@ const int numJoints = 6;
 // ... Robot -> DH Params, Move Joint, Move to Position 
 // 
 
-RobotManipulator::RobotManipulator()
-    //joint values / motor position
+RobotManipulator::RobotManipulator(const int motorPins[][2], int stepsPerRevolution, int stepDelay)
+    : currentJointValue{0.0, 0.0, 0.0, 0.0, 0.0, 0.0} {
+    // initialize your stepper drivers and motors here
+    for (int i = 0; i < numJoints; ++i) {
+        jointMotors[i] = Motor(motorPins[i][0], motorPins[i][1], stepsPerRevolution, stepDelay);
+    }
 }
 
 // set dh parameters
@@ -21,8 +25,14 @@ void RobotManipulator::setDHParameters(const DHParameters dhParams[]) {
     }
 }
 
-void RobotManipulator::moveJoint() {
-    // set direction, move joint, get position
+void RobotManipulator::moveJoint(int jointIndex, double jointValue) {
+    bool direction = (jointValue > currentJointValue[jointIndex]) ? HIGH : LOW;
+    jointMotors[jointIndex].setDirection(direction);
+
+    int stepsToMove = calculateStepsToMove(jointIndex, jointValue);
+    jointMotors[jointIndex].moveSteps(stepsToMove);
+
+    currentJointValue[jointIndex] = jointValue;
 }
 
     // move joints to calculated ik solution
