@@ -1,6 +1,8 @@
 // MotorControl.cpp
 #include "MotorControl.h"
 
+#define M_PI 3.14159265358979323846
+
 Motor::Motor(int pin1, int pin2, int pin3) {
   servoPins[0] = pin1;
   servoPins[1] = pin2;
@@ -14,17 +16,21 @@ void Motor::initialize() {
 }
 
 void Motor::moveJoint(int jointNumber, int angle) {
+int angleDeg = static_cast<int>(angle * 180.0 / M_PI); // radians to degrees
   if (jointNumber == 1) {
-    servo1.write(angle);
+    servo1.write(angleDeg);
   } else if (jointNumber == 2) {
-    servo2.write(angle);
+    servo2.write(angleDeg);
   } else if (jointNumber == 3) {
-    servo3.write(angle);
+    servo3.write(angleDeg);
   }
 }
 
 void Motor::moveJoints(int angle1, int angle2, int angle3) {
-  servo1.write(angle1);
-  servo2.write(angle2);
-  servo3.write(angle3);
+  int angle1Deg = static_cast<int>(angle1 * 180.0 / M_PI);
+  int angle2Deg = static_cast<int>(angle2 * 180.0 / M_PI);
+  int angle3Deg = static_cast<int>(angle3 * 180.0 / M_PI);
+  servo1.write(angle1Deg);
+  servo2.write(angle2Deg);
+  servo3.write(angle3Deg);
 }
