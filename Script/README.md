@@ -1,0 +1,1 @@
+This folder includes a Matlab script for simulating the Robot Arm using the RVC toolbox. The DH parameters reflect the Kinematics equations used in the library, excluding the arbitrary, user-configured link lengths.
