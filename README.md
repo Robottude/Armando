@@ -4,7 +4,7 @@
 
 Includes Kinematics calculation functions and motor control for 3-DOF Robot Arms with all revolute joints, and user-configurable link lengths.
 
-## Robot structure
+### Robot structure
 
 Kinematics equations are based on the following DH parameters which indicate the Robot's configuration:
 
