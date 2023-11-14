@@ -28,6 +28,7 @@ SOFTWARE.
 */
 
 // MotorControl.h
+// MotorControl.h
 #ifndef MOTOR_CONTROL_H
 #define MOTOR_CONTROL_H
 
@@ -35,13 +36,27 @@ SOFTWARE.
 
 #include <Servo.h>
 
+
+
+typedef enum {
+	MOVE_LEFT,
+	MOVE_RIGHT,
+	MOVE_UP,
+	MOVE_DOWN,
+	MOVE_DEFECTOR_UP,
+	MOVE_DEFECTOR_DOWN,	
+  PASS,
+}Moves;
+
+
+
 class Motor {
   public:
     Motor(int pin1, int pin2, int pin3); // constructor
     void initialize(); // initialize the servos
     void moveJoint(int jointNumber, float angle); // move a single joint
     void moveJoints(float angle1, float angle2, float angle3); // move all joints
-
+    void Motor::moveJoystick(Moves move, int *angle);
   private:
     Servo servo1;
     Servo servo2;
