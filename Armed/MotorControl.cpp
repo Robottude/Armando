@@ -28,6 +28,7 @@ SOFTWARE.
 */
 
 // MotorControl.cpp
+// MotorControl.cpp
 #include "MotorControl.h"
 
 #define M_PI 3.14159265358979323846
@@ -62,4 +63,39 @@ void Motor::moveJoints(float angle1, float angle2, float angle3) {
   servo1.write(angle1Deg);
   servo2.write(angle2Deg);
   servo3.write(angle3Deg);
+}
+
+void Motor::moveJoystick(Moves move,int *angle){    //FOR MOVING USING JOYSTICK TYPE OF MOVE AND ARRAY OF ANGLES FOR ALL 3 SERVO M  
+	
+	switch(move){
+
+		case MOVE_LEFT:
+			servo1.write(angle[0]++);
+		    break;
+		
+		case MOVE_RIGHT:
+			servo1.write(angle[0]--);
+	            break;
+		
+		case MOVE_UP:
+			servo2.write(angle[1]++);   //+ OR - CHECK 
+		    break;
+		
+		case MOVE_DOWN:
+			servo1.write(angle[1]--);
+		    break;
+		    
+		case MOVE_DEFECTOR_UP:
+			servo3.write(angle[2]++);
+		    break;
+		    
+		case MOVE_DEFECTOR_DOWN:
+			servo3.write(angle[2]--);
+		    break;
+		 
+		default:
+			;
+	
+	}
+	
 }
