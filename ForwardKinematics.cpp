@@ -15,8 +15,9 @@ EndEffectorPosition calculateForwardKinematics(const LinkLengths& linkLengths, c
     double x = linkLengths.a1 * cos(theta1);
     double y = linkLengths.a1 * sin(theta1);
 
+
     // z value based on joint 2 and joint 3 for changes in z value
-    double z = linkLengths.a2 * theta2 + linkLengths.a3 * theta3;
+    double z = linkLengths.a1 + linkLengths.a2 * sin(theta2) + linkLengths.a3 * sin(theta2 + theta3);
 
     // update x and y values based on joint 2 and joint 3 change
     x += linkLengths.a2 * cos(theta1) * cos(theta2) + linkLengths.a3 * cos(theta1) * cos(theta2 + theta3);
