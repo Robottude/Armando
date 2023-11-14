@@ -10,8 +10,8 @@ class Motor {
   public:
     Motor(int pin1, int pin2, int pin3); // constructor
     void initialize(); // initialize the servos
-    void moveJoint(int jointNumber, int angle); // move a single joint
-    void moveJoints(int angle1, int angle2, int angle3); // move all joints
+    void moveJoint(int jointNumber, float angle); // move a single joint
+    void moveJoints(float angle1, float angle2, float angle3); // move all joints
 
   private:
     Servo servo1;

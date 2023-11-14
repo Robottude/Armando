@@ -15,7 +15,7 @@ void Motor::initialize() {
   servo3.attach(servoPins[2]);
 }
 
-void Motor::moveJoint(int jointNumber, int angle) {
+void Motor::moveJoint(int jointNumber, float angle) {
 int angleDeg = static_cast<int>(angle * 180.0 / M_PI); // radians to degrees
   if (jointNumber == 1) {
     servo1.write(angleDeg);
@@ -26,7 +26,7 @@ int angleDeg = static_cast<int>(angle * 180.0 / M_PI); // radians to degrees
   }
 }
 
-void Motor::moveJoints(int angle1, int angle2, int angle3) {
+void Motor::moveJoints(float angle1, float angle2, float angle3) {
   int angle1Deg = static_cast<int>(angle1 * 180.0 / M_PI);
   int angle2Deg = static_cast<int>(angle2 * 180.0 / M_PI);
   int angle3Deg = static_cast<int>(angle3 * 180.0 / M_PI);
