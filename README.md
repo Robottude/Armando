@@ -4,7 +4,9 @@ Functional, easy-to-use library for Robot Arm control. Includes Kinematic parame
 
 Includes Kinematics calculation functions and motor control for 3-DOF Robot Arms with all revolute joints, and user-configurable link lengths.
 
-Kinematics equations are based on the following DH parameters which indicates Robot's configuration:
+# Robot structure
+
+Kinematics equations are based on the following DH parameters which indicate the Robot's configuration:
 
 **All-zero link offsets: d1=0, d2=0, and d3=0;**
 
