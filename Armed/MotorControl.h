@@ -56,7 +56,7 @@ class Motor {
     void initialize(); // initialize the servos
     void moveJoint(int jointNumber, float angle); // move a single joint
     void moveJoints(float angle1, float angle2, float angle3); // move all joints
-    void Motor::moveJoystick(Moves move, int *angle);
+    void moveJoystick(Moves move, int *angle);
   private:
     Servo servo1;
     Servo servo2;
