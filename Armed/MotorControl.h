@@ -57,6 +57,7 @@ class Motor {
     void moveJoint(int jointNumber, float angle); // move a single joint
     void moveJoints(float angle1, float angle2, float angle3); // move all joints
     void moveJoystick(Moves move, int *angle);
+    void sendAnglesToSerial(void);
   private:
     Servo servo1;
     Servo servo2;
