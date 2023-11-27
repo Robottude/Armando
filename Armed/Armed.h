@@ -34,5 +34,6 @@ SOFTWARE.
 #include "ForwardKinematics.h"
 #include "InverseKinematics.h"
 #include "MotorControl.h"
+#include "ControlRobotArm.h"
 
 #endif // ARMLBR_H
