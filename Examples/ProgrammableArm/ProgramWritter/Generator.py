@@ -1,5 +1,6 @@
 # This is an example we will use to make a program in which the robot arm will be able to execute.
 # Connect Arduino with a USB cable to a PC.
+# Upload ProgramWriter.ino to Arduino.
 # On the PC, run the script Generator.py (if serial isn't installed, use "pip install pyserial").
 # Wait until the popup appears
 # Input Delay value (ms)
