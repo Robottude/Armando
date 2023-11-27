@@ -1,9 +1,12 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 27 10:34:48 2023
+# This is an example we will use to make a program in which the robot arm will be able to execute.
+# Connect Arduino with a USB cable to a PC.
+# On the PC, run the script Generator.py (if serial isn't installed, use "pip install pyserial").
+# Wait until the popup appears
+# Input Delay value (ms)
+# If you want to finish the file, press 'q'
+# Ctrl+C to end
 
-@author: BLAGI
-"""
+
 
 import serial
 import os
