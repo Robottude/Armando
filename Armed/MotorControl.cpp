@@ -97,3 +97,17 @@ void Motor::moveJoystick(Moves move,int *angle){    //FOR MOVING USING JOYSTICK 
 	}
 	
 }
+
+
+void Motor::sendAnglesToSerial(void){
+
+   
+    delay(1);
+    Serial.write(servo1.read());
+    delay(1);
+    Serial.write(servo2.read());
+    delay(1);
+    Serial.write(servo3.read());
+    delay(1);
+    
+  }
