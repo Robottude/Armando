@@ -1,12 +1,14 @@
-//This is example  we will use tomake program witch will Robot arm be able to execute
-//Conect arduio with a usb cable witha a pc
-//On pc we will run script Generator.py (if serial isnt installed pip install pyserial )
-//Button is conected on pin 4 log1 = HIGH  
-//To save position press button
-//In Generator.py we will see pop up to input delay
-//Input delay
-//To finish writing program press q inside Generator.py
-//Ctrl+c to terminate
+
+// This is an example we will use to make a program in which the robot arm will be able to execute.
+// Connect Arduino with a USB cable to a PC.
+// On the PC, run the script Generator.py (if serial isn't installed, use "pip install pyserial").
+// The button is connected to pin 4; log1 = HIGH.
+// Press the button to save the current position.
+// In Generator.py, a pop-up will appear to input the delay.
+// Input the delay.
+// To finish writing the program, press 'q' inside Generator.py.
+// Use Ctrl+C to terminate.
+
  
 
 #include "Armed.h"
