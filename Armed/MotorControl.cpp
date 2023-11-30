@@ -29,6 +29,7 @@ SOFTWARE.
 
 // MotorControl.cpp
 #include "MotorControl.h"
+#include <Arduino.h>
 
 #define M_PI 3.14159265358979323846
 
@@ -100,7 +101,6 @@ void Motor::moveJoystick(Moves move,int *angle){    //FOR MOVING USING JOYSTICK 
 
 
 void Motor::sendAnglesToSerial(void){
-
    
     delay(1);
     Serial.write(servo1.read());
