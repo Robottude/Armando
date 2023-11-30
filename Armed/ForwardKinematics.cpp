@@ -31,14 +31,28 @@ SOFTWARE.
 #include "ForwardKinematics.h"
 #include <math.h>
 
+// define maximum and minimum angles for the servos (0 to 180 degrees)
+const double MAX_ANGLE = M_PI; // 180 degrees in radians
+const double MIN_ANGLE = 0.0; // 0 degrees in radians
+
+// ensure angle is within the range of servo movement
+double limitAngle(double angle) {
+    if (angle > MAX_ANGLE) {
+        return MAX_ANGLE;
+    } else if (angle < MIN_ANGLE) {
+        return MIN_ANGLE;
+    }
+    return angle;
+}
+
 // forward kinematics calculates end effector's position in space (x, y, z) based on the given robot configuration (link lengths) and joint angles
 
 EndEffectorPosition calculateForwardKinematics(const LinkLengths& linkLengths, const JointAngles& angles) {
     EndEffectorPosition position;
 
-    double theta1 = angles.theta1; // Angle of joint 1
-    double theta2 = angles.theta2; // Angle of joint 2
-    double theta3 = angles.theta3; // Angle of joint 3
+    double theta1 = limitAngle(angles.theta1); // joint 1
+    double theta2 = limitAngle(angles.theta2); // joint 2
+    double theta3 = limitAngle(angles.theta3); // joint 3
 
     // x and y value based on joint 1 rotation around the z axis
     double x = linkLengths.a1 * cos(theta1);
