@@ -31,6 +31,7 @@ SOFTWARE.
 #include "ForwardKinematics.h"
 #include <math.h>
 
+
 // define maximum and minimum angles for the servos (0 to 180 degrees)
 const double MAX_ANGLE = M_PI; // 180 degrees in radians
 const double MIN_ANGLE = 0.0; // 0 degrees in radians
@@ -71,4 +72,41 @@ EndEffectorPosition calculateForwardKinematics(const LinkLengths& linkLengths, c
     position.z = z;
 
     return position;
+}
+
+// calculating upper and lower bounds in space due to geometry and servo constraints (maximum and minimum values of x, y and z)
+WorkspaceBounds calculateWorkspaceBounds(const LinkLengths& lengths, int resolution) {
+    const double pi = 3.14159265359;
+    const double step_size = pi / resolution;
+    JointAngles angles;
+    WorkspaceBounds bounds;
+    bounds.minX = bounds.minY = bounds.minZ = 1e20; // A large number as an initial placeholder
+    bounds.maxX = bounds.maxY = bounds.maxZ = -1e20; // A small number as an initial placeholder
+
+    for (angles.theta1 = 0; angles.theta1 <= pi; angles.theta1 += step_size) {
+        for (angles.theta2 = 0; angles.theta2 <= pi; angles.theta2 += step_size) {
+            for (angles.theta3 = 0; angles.theta3 <= pi; angles.theta3 += step_size) {
+                // Calculate end effector position using forward kinematics
+		EndEffectorPosition position = calculateForwardKinematics(lengths, angles);
+
+                // Update workspace bounds
+                bounds.minX = minimum(bounds.minX, position.x);
+                bounds.maxX = maximum(bounds.maxX, position.x);
+                bounds.minY = minimum(bounds.minY, position.y);
+                bounds.maxY = maximum(bounds.maxY, position.y);
+                bounds.minZ = minimum(bounds.minZ, position.z);
+                bounds.maxZ = maximum(bounds.maxZ, position.z);
+            }
+        }
+    }
+
+    return bounds;
+}
+
+double minimum(double a, double b) {
+    return (a < b) ? a : b;
+}
+
+double maximum(double a, double b) {
+    return (a > b) ? a : b;
 }

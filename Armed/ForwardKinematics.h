@@ -33,6 +33,20 @@ SOFTWARE.
 
 #include "RobotArmConfig.h"
 
+struct WorkspaceBounds {
+    double minX;
+    double maxX;
+    double minY;
+    double maxY;
+    double minZ;
+    double maxZ;
+};
+
+WorkspaceBounds calculateWorkspaceBounds(const LinkLengths& lengths, int resolution);
+
 EndEffectorPosition calculateForwardKinematics(const LinkLengths& linkLengths, const JointAngles& angles);
+
+double minimum(double a, double b);
+double maximum(double a, double b);
 
 #endif
