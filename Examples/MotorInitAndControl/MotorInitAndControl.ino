@@ -1,4 +1,4 @@
-#include "Armed.h"
+#include "Armando.h"
 
 // define the servo pins
 int servoPin1 = 9;

@@ -1,4 +1,4 @@
-#include "Armed.h"
+#include "Armando.h"
 
   Motor Servos(3,5,6);
   int angle[]  = { 45, 45, 45 };   //ANGLE  MOTOR {1, 2, 3}
