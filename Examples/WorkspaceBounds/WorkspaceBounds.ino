@@ -1,4 +1,4 @@
-#include "Armed.h"
+#include "Armando.h"
 
 // define the variables to hold link lengths, joint angles, and end effector position
 LinkLengths Lengths;

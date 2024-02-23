@@ -2,7 +2,7 @@
 //In header we will have defined program witch is represented as a structure {angle1,angle2,angle3,delay},
 //Writing of this file currently is only posible manually
      
-#include "Armed.h"
+#include "Armando.h"
   //GLOBAL VARIABLE
   Motor Servos(3,5,6);
   int angle[]  = { 0, 90, 0 };   //ANGLE  MOTOR {1, 2, 3}
