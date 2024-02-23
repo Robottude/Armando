@@ -6,13 +6,13 @@ The calculateWorkspaceBounds function determines the upper and lower bounds of t
 
 ### Parameters:
 
-lengths (Type: LinkLengths): A struct containing the lengths of the robot's links, including a1, a2, and a3.
+- `lengths (Type: LinkLengths)`: A struct containing the lengths of the robot's links, including a1, a2, and a3.
 
-resolution (Type: int): An integer specifying the resolution of the sampling for joint angles.
+- `resolution (Type: int)`: An integer specifying the resolution of the sampling for joint angles.
 
 ### Returns:
 
-bounds (Type: WorkspaceBounds): A struct representing the bounds of the workspace, including minX, maxX, minY, maxY, minZ, and maxZ.
+- `bounds (Type: WorkspaceBounds)`: A struct representing the bounds of the workspace, including minX, maxX, minY, maxY, minZ, and maxZ.
 
 ## Example:
 ```cpp

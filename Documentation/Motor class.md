@@ -8,17 +8,17 @@ The Motor class encapsulates the functionality for controlling Robot's servo mot
 
 ### Constructor:
 
-Motor(int pin1, int pin2, int pin3): Constructs a Motor object with the specified pin numbers for three servo motors.
+- `Motor(int pin1, int pin2, int pin3)`: Constructs a Motor object with the specified pin numbers for three servo motors.
 
 ### Initializer:
 
-void initialize(): Initializes all three servo motors attached to the specified pins with a single call.
+- `void initialize()`: Initializes all three servo motors attached to the specified pins with a single call.
 
 ### Joint Movement:
 
-void moveJoint(int jointNumber, int angle): Moves a specific joint to the specified angle in degrees.
+- `void moveJoint(int jointNumber, int angle)`: Moves a specific joint to the specified angle in degrees.
 
-void moveJoints(int angle1, int angle2, int angle3): Moves all three joints to the specified angles in degrees simultaneously.
+- `void moveJoints(int angle1, int angle2, int angle3)`: Moves all three joints to the specified angles in degrees simultaneously.
 
 ## Example:
 ```cpp

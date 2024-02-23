@@ -8,19 +8,19 @@ The RobotArmConfig.cpp file defines global variables and functions for configuri
 
 ### Setters:
 
-void initializeLinkLengths(const LinkLengths& lengths): Sets the link lengths of the robot arm to the specified values.
+- `void initializeLinkLengths(const LinkLengths& lengths)`: Sets the link lengths of the robot arm to the specified values.
 
-void initializeEndEffectorPosition(const EndEffectorPosition& position): Sets the end effector position of the robot arm to the specified coordinates.
+- `void initializeEndEffectorPosition(const EndEffectorPosition& position)`: Sets the end effector position of the robot arm to the specified coordinates.
 
-void initializeJointAngles(const JointAngles& angles): Sets the joint angles of the robot arm to the specified values.
+- `void initializeJointAngles(const JointAngles& angles)`: Sets the joint angles of the robot arm to the specified values.
 
 ### Getters:
 
-LinkLengths getLinkLengths(): Retrieves the current link lengths of the robot arm.
+- `LinkLengths getLinkLengths()`: Retrieves the current link lengths of the robot arm.
 
-EndEffectorPosition getEndEffectorPosition(): Retrieves the current end effector position of the robot arm.
+- `EndEffectorPosition getEndEffectorPosition()`: Retrieves the current end effector position of the robot arm.
 
-JointAngles getJointAngles(): Retrieves the current joint angles of the robot arm.
+- `JointAngles getJointAngles()`: Retrieves the current joint angles of the robot arm.
 
 ## Example:
 ```cpp
