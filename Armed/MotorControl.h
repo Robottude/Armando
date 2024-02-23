@@ -32,9 +32,13 @@ SOFTWARE.
 #ifndef MOTOR_CONTROL_H
 #define MOTOR_CONTROL_H
 
-#include <Servo.h>
+#if defined(ARDUINO)
+  #include <Servo.h>
 
-#include <Servo.h>
+#elif defined(ESP32)
+  #include <ESP32Servo.h>
+
+#endif
 
 
 
