@@ -1,8 +1,10 @@
-# Armed
+# Armando
 
-**Functional, easy-to-use library for Robot Arm control. Includes Kinematic parameters analysis and hardware control.**
+**Armando is a functional, easy-to-use library for Robot Arm control. Supports ESP32 and various Arduino boards. Includes Kinematic parameters analysis and hardware control.**
 
-Includes Kinematics calculation functions and motor control for 3-DOF Robot Arms with all revolute joints, and user-configurable link lengths.
+Contains Inverse and Forward Kinematics calculation functions, workspace bounds calculation, and servo control for 3-DOF Robot Arms with all revolute joints, and user-configurable link lengths.
+
+Due to preprocessor directives that allow both ESP32 and Arduino compatibility, when using an ESP32 board, 'ESP32' should be defined when compiling, either through IDE or build system.
 
 ### Robot structure
 
