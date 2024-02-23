@@ -4,7 +4,7 @@
 
 Contains Inverse and Forward Kinematics calculation functions, workspace bounds calculation, and servo control for 3-DOF Robot Arms with all revolute joints, and user-configurable link lengths.
 
-For additional information about Library's funcionalities, theoretical background, use cases, or overall structure, refer to the 'Documentation' folder.
+For additional information about Library's functionalities, theoretical background, use cases, or overall structure, refer to the 'Documentation' folder.
 
 Due to preprocessor directives that allow both ESP32 and Arduino compatibility, when using an ESP32 board, 'ESP32' should be defined when compiling, either through IDE or build system.
 
