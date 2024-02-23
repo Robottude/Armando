@@ -7,13 +7,13 @@ The function begins by extracting the Cartesian coordinates (x, y, z) of the end
 
 ### Parameters:
 
-linkLengths (Type: LinkLengths): A structure containing the lengths of the robot's links, including a1, a2, and a3.
+- `linkLengths (Type: LinkLengths)`: A structure containing the lengths of the robot's links, including a1, a2, and a3.
 
-position (Type: EndEffectorPosition): A structure representing the position of the end effector in space, including x, y, and z coordinates.
+- `position (Type: EndEffectorPosition)`: A structure representing the position of the end effector in space, including x, y, and z coordinates.
 
 ### Returns:
 
-angles (Type: JointAngles): A structure representing the calculated joint angles required to achieve the specified end effector position.
+- `angles (Type: JointAngles)`: A structure representing the calculated joint angles required to achieve the specified end effector position.
 
 ## Example:
 ```cpp

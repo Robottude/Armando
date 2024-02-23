@@ -7,13 +7,13 @@ The function utilizes trigonometric relationships to compute the end effector's 
 
 ### Parameters:
 
-linkLengths (Type: LinkLengths): A structure containing the lengths of the robot's links, including a1, a2, and a3.
+- `linkLengths (Type: LinkLengths)`: A structure containing the lengths of the robot's links, including a1, a2, and a3.
 
-angles (Type: JointAngles): A structure representing the joint angles of the robot, including theta1, theta2, and theta3.
+- `angles (Type: JointAngles)`: A structure representing the joint angles of the robot, including theta1, theta2, and theta3.
 
 ### Returns:
 
-position (Type: EndEffectorPosition): A structure representing the position of the end effector in space, including x, y, and z coordinates.
+- `position (Type: EndEffectorPosition)`: A structure representing the position of the end effector in space, including x, y, and z coordinates.
 
 ## Example:
 ```cpp
