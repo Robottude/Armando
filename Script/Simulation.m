@@ -1,9 +1,9 @@
 startup_rvc;
-% define the robot manipulator
+% define the robot manipulator using SerialLink function, for given dh parameters and joint types
 robot = SerialLink([ 
-    Revolute('d', 0, 'a', 0, 'alpha', 0, 'modified') % First joint rotates around z-axis
-    Revolute('d', 0, 'a', 1.5, 'alpha', pi/2, 'modified')   % Second joint changes z and x
-    Revolute('d', 0, 'a', 1.5, 'alpha', 0, 'modified')   % Third joint changes z, x, and y
+    Revolute('d', 0, 'a', 0, 'alpha', 0, 'modified') % Base joint rotates around the z axis, rotating the entire robot. This joint changes x and y values of the end effector, not affecting the z value.
+    Revolute('d', 0, 'a', 1.5, 'alpha', pi/2, 'modified')   % Second joint is positioned perpendicular to the first joint, changing the z value of the end effector (the height), but also x and y values due to geometrical constraints.
+    Revolute('d', 0, 'a', 1.5, 'alpha', 0, 'modified')   % Oriented the same as the second joint.
 ], 'name', 'Robot Arm');
 
 % set the joint limits to reflect servo constraints
